@@ -1,0 +1,178 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-image : url(https://avatanplus.com/files/resources/original/58020a8330991157c7f9107f.jpg);
+    font: 100%/1.5em sans-serif;
+}
+
+/* Весь контент*/
+.container{
+    width: 90%;
+    height: auto;
+    margin: 0 auto;
+    margin-top: 3%;     
+}
+
+
+/* Параметры колонок */
+.container .cols{
+    float: left;
+    margin: 0 0 1em;
+    padding: 0 1em;
+    text-align: center;
+}
+
+/* Отображение по стандарту - "одна колонка в строчку" (мобильная версия) */
+.container .cols.col-1 , 
+.container .cols.col-2 , 
+.container .cols.col-3 , 
+.container .cols.col-4 ,
+.container .cols.col-5 ,
+.container .cols.col-6 ,
+.container .cols.col-7 ,
+.container .cols.col-8 ,
+.container .cols.col-9 ,
+.container .cols.col-10,
+.container .cols.col-11,
+.container .cols.col-12   {width: 100%;}
+ 
+/* Очистка строк для каждого набора колонок */
+.row {
+    clear: both;
+}
+
+ul li{
+    font-family: cursive;
+    list-style: none;
+}
+
+input{
+    text-align: center;
+}
+
+/* Смена режима из мобильной версии в версию для ПК */
+@media screen and (min-width: 370px){
+    
+    .container .cols.col-1    {width: auto;
+        border-bottom: 3px solid red;
+        border-top: 3px solid red;
+        border-radius: 30px;}
+
+    .container .cols.col-2    {width: auto;
+        background: #e8eef1;
+        border: 3px solid red;
+        float: right;
+        font-size: 2em;
+        padding: 5px;
+        border-radius: 22px;
+        margin-right: 11%;}
+
+    a{
+        text-decoration: none;
+        color: black;
+    }
+
+    .container .cols.col-2:hover{
+        background: red;
+        color: whitesmoke;
+        border: 3px solid whitesmoke;
+        border-radius: 2px;
+    }
+
+    .container .cols.col-3    {width: auto;
+        color: white;
+        background: red;
+        padding: 2px;}
+
+    .container .cols.col-4    {width: auto;
+        background: antiquewhite;
+        color: black;
+        border-top: 4px solid green;
+        border-bottom: 4px solid green;
+        border-radius: 20px;
+        padding: 10px;
+        margin-left: 15%;}
+
+    .container .cols.col-5    {width: 41.66%;}
+    .container .cols.col-6    {width: 50%;  
+        background: azure; 
+        border-left: 3px solid red; 
+        border-right: 3px solid red; 
+        border-radius: 40px;}
+    
+    .container .cols.col-7    {width: auto;
+        background: #FFEFD5;
+        border-left: 7px solid blue;
+        border-right: 7px solid blue;
+        border-radius: 20px;
+        padding: 10px;}
+
+    .container .cols.col-7:hover{
+        background: whitesmoke;}
+
+    .container .cols.col-8:hover{
+        background: whitesmoke;}
+
+    .container .cols.col-8    {width: auto;
+        float: right;
+        background: #FFDAB9;
+        border-left: 7px solid green;
+        border-right: 7px solid green;
+        border-radius: 40px;
+        padding-bottom: 5px;}
+    
+    .container .cols.col-9    {width: 75%;
+        height: 100px;
+        float: left;
+        background: dodgerblue;
+        border-left: 4px solid black;
+        border-right: 4px solid black;
+        border-radius: 20%;}
+
+    .container .cols.col-10   {width: 83.33%;}
+    .container .cols.col-11   {width: 91.66%;}
+
+    .container .cols.col-12   {width: 100%;  
+        background: #AFEEEE; 
+        padding: 1%;
+        border-left: 3px solid blue;
+        border-right: 3px solid blue;
+        border-radius: 50px;}
+}
+
+td{
+    font-family: Calibri;
+    padding: 2px;
+    border: 1px solid blue;
+    background: white;
+    border-radius: 3px;
+}
+
+.button{
+    border: 2px solid green;
+    background: whitesmoke;
+    font-family: Georgia;
+    border-radius: 6px;
+    padding: 2px;
+}
+
+.button:hover{
+    background: green;
+    color: #e8eef1;
+}
+
+input{
+    border: 1px solid black;
+    padding: 2px;
+}
+
+.reg{
+    float: right;
+    margin-top: -20px;
+    margin-bottom: 10px;
+    margin-right: 30px;
+}
