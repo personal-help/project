@@ -14,10 +14,10 @@
         <div class=container>
 
             <div class="reg">
-                <a href="input.php">         <input type="button" class="button" value="Вход"></a>
+                <a href="index.php">         <input type="button" class="button" value="Выход"></a>
             </div><br>
 
-                <a href="index.php">
+                <a href="aftorization.php">
                     <div class="cols col-12"> <h1>КАДРОВОЕ АГЕНСТВО</h1> </div>
                 </a>
 
@@ -51,13 +51,13 @@
         </div>
 
             <div class="cols col-2">
-                <a href="index2.php">ЗАПОЛНИТЬ РЕЗЮМЕ</a>
+                <a href="rezumecheck.php">ПРОСМОТРЕТЬ РЕЗЮМЕ</a>
             </div>
 
         <div class="row">
             <div class="cols col-7">
                 <h3>Поиск сотрудников</h3><hr>
-                     <form action="index.php" method="get">
+                     <form action="aftorization.php" method="get">
                          <input class="in" type="search" name="name"     placeholder="Имя">
                          <input class="button" type="submit" value="Найти">
                      </form>
@@ -94,6 +94,35 @@
             </div>
 
         <div class="row">
+            <div class="cols col-8">
+                <h3>Внесение данных</h3><hr>
+                     <form action="aftorization.php" method="post">
+                         <input size="15" type="text" name="name" required placeholder="Имя">
+                         <input size="15" type="text" name="surename" required placeholder="Фамилия">
+                         <input size="15" type="text" name="position" required placeholder="Должность">
+                         <input size="25" type="text" name="provider" required placeholder="Услуга">
+                         <input class="button" type="submit" value="Добавить">
+                     </form>
+
+                <?php
+                include ("bd.php");
+
+                if (isset($_POST["name"]))
+                {
+                    $sql = mysql_query("INSERT INTO agency (name,surename,position,provider)  
+                                    VALUES ('".$_POST['name']."',
+                                            '".$_POST['surename']."',
+                                            '".$_POST['position']."',
+                                            '".$_POST['provider']."')");
+                    if ($sql)   {    echo "<p>Данные успешно добавлены.</p>";}
+                    else        {echo "<p>Произошла ошибка.</p>";}
+                }
+                ?>
+
+            </div>
+        </div>
+
+        <div class="row">
             <div class="cols col-7">
                 <h3>База данных</h3><hr>
 
@@ -113,6 +142,26 @@
                     }
                 }
                 ?>
+
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="cols col-1">
+                <form action="aftorization.php" method="get">
+                    <input type="text" name="del" size="5" required placeholder="Номер">
+                    <input class="button" type="submit" value="Удалить">
+                </form>
+
+                        <?php
+                        include ("bd.php");
+
+                        if (isset($_GET['del'])) {
+                            $sql = mysql_query('DELETE FROM `agency` WHERE `ID` = "'.$_GET['del'].'"');
+                            if ($sql)   {   echo "<p>Строка удалена.</p>";}
+                            else {echo "<p>Произошла ошибка.</p>";}
+                        }
+                        ?>
 
             </div>
         </div>
